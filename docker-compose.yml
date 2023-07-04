@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  wordpress:
+    image: wordpress:latest
+    volumes:
+      - ./src/themes:/var/www/html/wp-content/themes
+      - ./src/plugins:/var/www/html/wp-content/plugins
+      - ./src/uploads:/var/www/html/wp-content/uploads
+    ports:
+      - "8000:80"
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: ls-97cbfc1b7833bb0a05605f37a10191504e356039.cwjr2a47qc0n.us-east-1.rds.amazonaws.com
+      WORDPRESS_DB_USER: dbmasteruser
+      WORDPRESS_DB_PASSWORD: fTegmkVNJPG&Ea}[81pg~mNS9,P):30x
+      WORDPRESS_DB_NAME: bd_wordpress
